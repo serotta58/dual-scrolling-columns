@@ -1,33 +1,61 @@
-.App {
-  text-align: center;
+html {
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#app-body {
+  height: 100%;
+  margin: 0px;    /*removes default style*/
+  display: flex;  /*arranges following left/right divs into columns*/
+}
+
+.column {
+  height: 100%;   /*allows both columns to span the full height of the browser window*/
+  display: flex;
+  flex-direction: column;  /*places the left and right headers above the bottom content*/
+}
+
+#left {
+  flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
+  background-color: white;
+}
+
+#right {
+  background-color: #f3f3f3;
+}
+
+.top-left {
+  flex-shrink: 0;
+  background-color: #333;
   color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.top-right {
+  flex-shrink: 0;
+  display: inline-flex;
+  background-color: #333;
+  color: white;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  margin-right: 20px;
+}
+
+.bottom {
+  flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+  overflow-y: auto;  /*adds scroll to this container*/
+  padding: 20px;
 }

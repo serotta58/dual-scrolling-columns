@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React app demo with Two Column layout with scrolling
 
-## Available Scripts
+Andrea Pereira de Almeida wrote a blog post about how to [Use Flexbox to create a sticky header and sidebar with flexible content](https://www.bitovi.com/blog/use-flexbox-to-create-a-sticky-header-and-sidebar-with-flexible-content).  She used this layout in the design of the [CanJS](https://canjs.com/) website.  Check it out.  It has some nice features:
 
-In the project directory, you can run:
+- Sticky header composed of two synced column headers
+- Two column layout, each column with its own auto scroll functionality
+- Left column sizes to fit the width of its variable content
+- Right column fills the remaining space
+- Right header navigation content moves along with resizing of right column
 
-### `npm start`
+I wanted to use this in a React app, but it required a few tweaks in order to work.  This demo code fixes those issues.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Issues
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+I copied the code from the HTML and CSS from the [JS Bin](https://jsbin.com/qusudim/edit?css,output) linked in the article.  I dropped the HTML code structure into the React App render() and imported the CSS.  But the `<body>` tag triggered console warnings due to the original body tags wrapping the whole React App.  Changing it to a `<div>` eliminated the warning, but then the scroll bars disappeared.  The columns in a div (id='app-body') with this style to create the columns:
 
-### `npm test`
+```css
+#app-body {
+  height: 100%;
+  display: flex;  /*arranges following left/right divs into columns*/
+}
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+And the following is required to prevent the whole page from scrolling (which also eliminates the individual column scrolling):
 
-### `npm run build`
+```css
+body {
+  height: 100%;
+  display: flex;
+}
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This can be a useful starting template for a layout.  You could add a right column, and optionally hide or show the left or right column and the inner column would expand or shrink to fill the remaining area.
