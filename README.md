@@ -31,3 +31,7 @@ body {
 ```
 
 This can be a useful starting template for a layout.  You could add a right column, and optionally hide or show the left or right column and the inner column would expand or shrink to fill the remaining area.
+
+## To-Do
+
+- The bottom left column should resize to keep the div within the vertical scrollbar.  The scrollbar currently overlaps the div area. This can cause a problem with the wide Firefox scrollbars if there isn't enough padding or margin.

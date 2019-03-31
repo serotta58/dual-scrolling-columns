@@ -22,6 +22,7 @@ body {
 #left {
   flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
   background-color: white;
+  white-space: nowrap;
 }
 
 #right {
