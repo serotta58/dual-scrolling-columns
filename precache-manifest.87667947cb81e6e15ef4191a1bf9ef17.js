@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "c9aac4a2dfa5e1f738ae",
-    "url": "/dual-scrolling-columns/static/css/main.23fb8acf.chunk.css"
+    "revision": "d5a8e9749968fb8d6ecc",
+    "url": "/dual-scrolling-columns/static/css/main.3ac7767d.chunk.css"
   },
   {
-    "revision": "c9aac4a2dfa5e1f738ae",
+    "revision": "d5a8e9749968fb8d6ecc",
     "url": "/dual-scrolling-columns/static/js/main.4c627820.chunk.js"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/dual-scrolling-columns/static/js/2.65aa1cca.chunk.js"
   },
   {
-    "revision": "ea9f30ede509320f79f68bffb979e3ac",
+    "revision": "8a526c43b976637c825ca51974b6228b",
     "url": "/dual-scrolling-columns/index.html"
   }
 ];

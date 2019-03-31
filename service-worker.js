@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dual-scrolling-columns/precache-manifest.6092b61803304eab42e3494dff39e66d.js"
+  "/dual-scrolling-columns/precache-manifest.87667947cb81e6e15ef4191a1bf9ef17.js"
 );
 
 workbox.clientsClaim();
